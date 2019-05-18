@@ -4,9 +4,11 @@ using System;
 
 namespace MultiCurrencyMoney
 {
-    public class Money
+    public abstract class Money
     {
         protected int amount;
+
+        public abstract Money Times(int multiplier);
 
         public override bool Equals(Object o)
         {
@@ -18,6 +20,16 @@ namespace MultiCurrencyMoney
         public override int GetHashCode()
         {
             return 0;
+        }
+
+        public static Money Dollar(int amount)
+        {
+            return new Dollar(amount);
+        }
+
+        public static Money Franc(int amount)
+        {
+            return new Franc(amount);
         }
     }
 }
