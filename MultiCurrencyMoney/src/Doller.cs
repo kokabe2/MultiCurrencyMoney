@@ -11,9 +11,9 @@ namespace MultiCurrencyMoney
             this.amount = amount;
         }
 
-        public void Times(int multiplier)
+        public Dollar Times(int multiplier)
         {
-            amount *= multiplier;
+            return new Dollar(amount * multiplier);
         }
     }
 }
