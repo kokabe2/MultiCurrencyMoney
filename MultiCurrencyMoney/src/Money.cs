@@ -11,7 +11,8 @@ namespace MultiCurrencyMoney
         public override bool Equals(Object o)
         {
             Money money = (Money)o;
-            return amount == money.amount;
+            return amount == money.amount
+                    && GetType().Name.Equals(money.GetType().Name);
         }
 
         public override int GetHashCode()
