@@ -1,0 +1,7 @@
+﻿language: csharp
+solution: "./MultiCurrencyMoney/MultiCurrencyMoney.sln"
+install:
+  - travis_retry nuget restore -source "https://www.nuget.org/api/v2" ./MultiCurrencyMoney/MultiCurrencyMoney.sln
+script:
+  - xbuild ./MultiCurrencyMoney/MultiCurrencyMoney.sln
+  - mono ./MultiCurrencyMoney/packages/xunit.runner.console*/tools/xunit.console.exe ./MultiCurrencyMoney/test/bin/Debug/MultiCurrencyMoneyTest.dll
