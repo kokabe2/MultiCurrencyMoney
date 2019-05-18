@@ -1,0 +1,2 @@
+# MultiCurrencyMoney
+The money example
