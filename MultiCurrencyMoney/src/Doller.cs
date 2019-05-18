@@ -4,7 +4,7 @@ namespace MultiCurrencyMoney
 {
     public class Dollar
     {
-        public int amount;
+        int amount;
 
         public Dollar(int amount)
         {
