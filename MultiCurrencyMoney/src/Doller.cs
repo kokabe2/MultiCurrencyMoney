@@ -15,5 +15,16 @@ namespace MultiCurrencyMoney
         {
             return new Dollar(amount * multiplier);
         }
+
+        public override bool Equals(Object o)
+        {
+            Dollar dollar = (Dollar)o;
+            return amount == dollar.amount;
+        }
+
+        public override int GetHashCode()
+        {
+            return 0;
+        }
     }
 }

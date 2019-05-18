@@ -15,5 +15,12 @@ namespace MultiCurrencyMoneyTest
             product = five.Times(3);
             Assert.Equal(15, product.amount);
         }
+
+        [Fact]
+        public void testEquality()
+        {
+            Assert.True(new Dollar(5).Equals(new Dollar(5)));
+            Assert.False(new Dollar(5).Equals(new Dollar(6)));
+        }
     }
 }
