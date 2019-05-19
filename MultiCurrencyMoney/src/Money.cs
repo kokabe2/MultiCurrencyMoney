@@ -1,4 +1,4 @@
-﻿// Copyright(c) 2019 Ken Okabe
+// Copyright(c) 2019 Ken Okabe
 // This software is released under the MIT License, see LICENSE.
 using System;
 
@@ -6,10 +6,10 @@ namespace MultiCurrencyMoney
 {
     public class Money
     {
-        protected int amount;
-        protected string currency;
+        private int amount;
+        private string currency;
 
-        public Money(int amount, string currency)
+        private Money(int amount, string currency)
         {
             this.amount = amount;
             this.currency = currency;
@@ -43,12 +43,12 @@ namespace MultiCurrencyMoney
 
         public static Money Dollar(int amount)
         {
-            return new Dollar(amount, "USD");
+            return new Money(amount, "USD");
         }
 
         public static Money Franc(int amount)
         {
-            return new Franc(amount, "CHF");
+            return new Money(amount, "CHF");
         }
     }
 }
