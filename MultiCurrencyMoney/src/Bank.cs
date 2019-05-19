@@ -1,4 +1,4 @@
-// Copyright(c) 2019 Ken Okabe
+﻿// Copyright(c) 2019 Ken Okabe
 // This software is released under the MIT License, see LICENSE.
 
 namespace MultiCurrencyMoney
@@ -7,7 +7,7 @@ namespace MultiCurrencyMoney
     {
         public Money Reduce(Expression source, string to)
         {
-            return Money.Dollar(10);
+            return source.Reduce(to);
         }
     }
 }

@@ -5,5 +5,6 @@ namespace MultiCurrencyMoney
 {
     public interface Expression
     {
+        Money Reduce(string to);
     }
 }
