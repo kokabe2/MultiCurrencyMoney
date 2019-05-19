@@ -37,7 +37,7 @@ namespace MultiCurrencyMoneyTest
             Money five = Money.Dollar(5);
             Expression sum = five.Plus(five);
             Bank bank = new Bank();
-            Money reduced = bank.Reduced(sum, "USD");
+            Money reduced = bank.Reduce(sum, "USD");
             Assert.Equal(Money.Dollar(10), reduced);
         }
     }
