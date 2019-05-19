@@ -4,18 +4,21 @@ using System;
 
 namespace MultiCurrencyMoney
 {
-    public abstract class Money
+    public class Money
     {
         protected int amount;
         protected string currency;
 
-        protected Money(int amount, string currency)
+        public Money(int amount, string currency)
         {
             this.amount = amount;
             this.currency = currency;
         }
 
-        public abstract Money Times(int multiplier);
+        public Money Times(int multiplier)
+        {
+            return new Money(amount * multiplier, currency);
+        }
 
         public string Currency()
         {
@@ -25,13 +28,17 @@ namespace MultiCurrencyMoney
         public override bool Equals(Object o)
         {
             Money money = (Money)o;
-            return amount == money.amount
-                    && GetType().Name.Equals(money.GetType().Name);
+            return amount == money.amount && currency.Equals(money.currency);
         }
 
         public override int GetHashCode()
         {
             return 0;
+        }
+
+        public override string ToString()
+        {
+            return amount + " " + currency;
         }
 
         public static Money Dollar(int amount)

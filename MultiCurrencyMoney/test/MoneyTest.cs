@@ -40,5 +40,11 @@ namespace MultiCurrencyMoneyTest
             Assert.Equal("USD", Money.Dollar(1).Currency());
             Assert.Equal("CHF", Money.Franc(1).Currency());
         }
+
+        [Fact]
+        public void testDifferentClassEquality()
+        {
+            Assert.True(new Money(10, "CHF").Equals(new Franc(10, "CHF")));
+        }
     }
 }
