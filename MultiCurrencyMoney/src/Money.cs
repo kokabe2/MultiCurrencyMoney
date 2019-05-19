@@ -1,10 +1,10 @@
-// Copyright(c) 2019 Ken Okabe
+﻿// Copyright(c) 2019 Ken Okabe
 // This software is released under the MIT License, see LICENSE.
 using System;
 
 namespace MultiCurrencyMoney
 {
-    public class Money
+    public class Money : Expression
     {
         private int amount;
         private string currency;
@@ -18,6 +18,11 @@ namespace MultiCurrencyMoney
         public Money Times(int multiplier)
         {
             return new Money(amount * multiplier, currency);
+        }
+
+        public Expression Plus(Money addend)
+        {
+            return new Money(amount + addend.amount, currency);
         }
 
         public string Currency()
