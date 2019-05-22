@@ -5,18 +5,24 @@ namespace MultiCurrencyMoney
 {
     public class Sum : Expression
     {
-        public Money augend;
-        public Money addend;
+        public Expression augend;
+        public Expression addend;
 
-        public Sum(Money augend, Money addend)
+        public Sum(Expression augend, Expression addend)
         {
             this.augend = augend;
             this.addend = addend;
         }
 
+        public Expression Plus(Expression addend)
+        {
+            return null;
+        }
+
         public Money Reduce(Bank bank, string to)
         {
-            int amount = augend.amount + addend.amount;
+            int amount = augend.Reduce(bank, to).amount
+                + addend.Reduce(bank, to).amount;
             return new Money(amount, to);
         }
     }
