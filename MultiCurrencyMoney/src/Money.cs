@@ -1,4 +1,4 @@
-// Copyright(c) 2019 Ken Okabe
+﻿// Copyright(c) 2019 Ken Okabe
 // This software is released under the MIT License, see LICENSE.
 using System;
 
@@ -25,9 +25,10 @@ namespace MultiCurrencyMoney
             return new Sum(this, addend);
         }
 
-        public Money Reduce(string to)
+        public Money Reduce(Bank bank, string to)
         {
-            return this;
+            int rate = bank.Rate(currency, to);
+            return new Money(amount / rate, to);
         }
 
         public string Currency()
