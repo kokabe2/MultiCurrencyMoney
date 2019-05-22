@@ -1,4 +1,4 @@
-﻿// Copyright(c) 2019 Ken Okabe
+// Copyright(c) 2019 Ken Okabe
 // This software is released under the MIT License, see LICENSE.
 using System;
 
@@ -35,9 +35,9 @@ namespace MultiCurrencyMoney
             return currency;
         }
 
-        public override bool Equals(Object o)
+        public override bool Equals(Object obj)
         {
-            Money money = (Money)o;
+            Money money = (Money)obj;
             return amount == money.amount && currency.Equals(money.currency);
         }
 
