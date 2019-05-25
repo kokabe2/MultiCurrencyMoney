@@ -14,9 +14,14 @@ namespace MultiCurrencyMoney
             this.addend = addend;
         }
 
+        public Expression Times(int multiplier)
+        {
+            return new Sum(augend.Times(multiplier), addend.Times(multiplier));
+        }
+
         public Expression Plus(Expression addend)
         {
-            return null;
+            return new Sum(this, addend);
         }
 
         public Money Reduce(Bank bank, string to)
